@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Product>
+
+<h2>Products</h2>
+<table class="table">
+    <tr>
+        <th>productID</th>
+        <th>name</th>
+        <th>price</th>
+        <th>imagePah</th>
+        <th>categoryID</th>
+        <th>companyID</th>
+
+    </tr>
+
+    @foreach(var product in Model)
+    {
+<tr>
+    <td>@product.productID</td>
+    <td>@product.name</td>
+    <td>@product.price</td>
+    <td>@product.imagePath</td>
+    <td>@product.categoryID</td>
+    <td>@product.companyID</td>
+
+</tr>
+
+    }
+</table>
+
+<div> <img src="~Users/walterbrunopradovieira/repos/FinalProjectTrelloWebsite/FinalProjectTrelloWebsite/Views/Shared/trelloLogo.jpg" alt="Trello logo" height="342"></div>
