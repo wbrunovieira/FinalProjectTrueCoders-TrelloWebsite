@@ -53,7 +53,13 @@ namespace FinalProjectTrelloWebsite
             return product;
         }
 
-        
+       public void DeleteProduct(Product product)
+        {
+       
+            _conn.Execute("DELETE FROM Product WHERE productID = @id;", new { id = product.ProductID });
+        }
+
+
     }
 
 
