@@ -10,6 +10,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
-    <Folder Include="img\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 </Project>
