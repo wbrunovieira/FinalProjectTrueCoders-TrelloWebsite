@@ -14,6 +14,7 @@ namespace FinalProjectTrelloWebsite
         public IEnumerable<Category> GetCategories();
         public Product AssignCategory();
         public void DeleteProduct(Product product);
+        public IEnumerable<Product> SearchProduct(string search);
 
     }
 }

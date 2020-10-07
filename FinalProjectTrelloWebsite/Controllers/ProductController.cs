@@ -64,6 +64,13 @@ namespace FinalProjectTrelloWebsite.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Search(string searchString)
+        {
+            var search = repo.SearchProduct(searchString);
+
+            return View(search);
+        }
+
 
     }
 }

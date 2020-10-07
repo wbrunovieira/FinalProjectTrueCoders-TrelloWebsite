@@ -59,7 +59,11 @@ namespace FinalProjectTrelloWebsite
             _conn.Execute("DELETE FROM Product WHERE productID = @id;", new { id = product.ProductID });
         }
 
-
+        public IEnumerable<Product> SearchProduct(string newname)
+        {
+            return _conn.Query<Product>("SELECT * FROM product WHERE NAME LIKE @name;",
+                new { name = "%" + newname + "%" });
+        }
     }
 
 

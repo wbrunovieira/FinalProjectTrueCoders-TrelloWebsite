@@ -6,10 +6,11 @@
     <a href="/Product/InsertProduct/">Create a New Product</a>
 </div>
 
+<h1>Search Page</h1>
 
 @using (Html.BeginForm("Search", "Product", FormMethod.Get, new { style = "margin-left:250px; margin-top:50px; margin-bottom:30px", @class = "thFormClass " }))
 {
-    <p class="text-white">
+    <p>
         Search Trello Products by name: @Html.TextBox("SearchString")
         <input type="submit" value="Search" />
 
