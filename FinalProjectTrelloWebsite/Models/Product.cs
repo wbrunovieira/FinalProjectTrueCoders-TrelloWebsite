@@ -17,7 +17,8 @@ namespace FinalProjectTrelloWebsite.Models
         public int companyID { get; set; }
         public int onsale { get; set; }
         public IEnumerable<Category> Categories { get; set; }
-        
+        public string Image { get; set; }
+
 
     }
 }

@@ -37,7 +37,7 @@ namespace FinalProjectTrelloWebsite
         public void InsertProduct(Product productToInsert)
         {
             _conn.Execute("INSERT INTO product (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
-            new { name = productToInsert.name, price = productToInsert.price, categoryID = productToInsert.categoryID});
+            new { name = productToInsert.name, price = productToInsert.price, categoryID = productToInsert.categoryID });
         }
 
         public IEnumerable<Category> GetCategories()
@@ -63,6 +63,12 @@ namespace FinalProjectTrelloWebsite
         {
             return _conn.Query<Product>("SELECT * FROM product WHERE NAME LIKE @name;",
                 new { name = "%" + newname + "%" });
+        }
+
+        public void InsertImage(Product product)
+        {
+            _conn.Execute("Update Product SET imagePath = @image WHERE ProductID = @productid",
+                new { image = product.imagePath, productid = product.ProductID });
         }
     }
 

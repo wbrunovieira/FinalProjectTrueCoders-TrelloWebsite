@@ -1,22 +1,126 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FinalProjectTrelloWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightskyblue;
+        }
+
+        .cabecalho {
+            background: #333;
+            color: #fff;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+            padding: 10px 15px;
+        }
+
+        .menu a:hover {
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        .cabecalho .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin-right: 10px;
+        }
+
+        .destaque {
+            background: #f50a31;
+            color: #fff;
+        }
+        /* ==================== */
+        /* Solução com Flex Box */
+        /* ==================== */
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu {
+            flex-grow: 10;
+        }
+
+            .menu ul {
+                display: flex;
+            }
+
+            .menu li {
+                margin: 0px 10px;
+            }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="~/img/trelloLogo.jpg" alt="Trello logo" height="200">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                </li>
+                <li>
+                    <a href="#contato">contact</a>
+                </li>
+            </ul>
+        </nav>
+        <button  type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span> </span>
+        </button>
+
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+        <div>
+            
+        </div>
+    </header>
+
+
+    @*<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
 
-                <div>
 
-                    <img src="../wwwroot/img/trelloLogo.jpg" alt="Trello logo" height="300">
 
-                </div>
+                <img src="~/img/trelloLogo.jpg" alt="Trello logo" height="200">
+
 
 
 
@@ -37,7 +141,8 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header>*@
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
