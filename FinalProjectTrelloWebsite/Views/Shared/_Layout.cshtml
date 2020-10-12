@@ -11,11 +11,11 @@
         body {
             margin: 0;
             font-family: 'Oswald', sans-serif;
-            background-color: lightskyblue;
+            background-color: lightgray;
         }
 
         .cabecalho {
-            background: #333;
+            background: blue;
             color: #fff;
             border-bottom: solid 5px #4faddb;
             height: 80px;
@@ -53,9 +53,7 @@
             background: #f50a31;
             color: #fff;
         }
-        /* ==================== */
-        /* Solução com Flex Box */
-        /* ==================== */
+        
         .cabecalho {
             display: flex;
             align-items: center;
@@ -82,11 +80,9 @@
                 <img src="~/img/trelloLogo.jpg" alt="Trello logo" height="200">
             </a>
         </div>
-        <nav>
+        <nav class="menu">
             <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
+               
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
@@ -94,7 +90,7 @@
                     <a asp-area="" asp-controller="Product" asp-action="Index">Products</a>
                 </li>
                 <li>
-                    <a href="#contato">contact</a>
+                    <a href="#contato">Contact</a>
                 </li>
             </ul>
         </nav>

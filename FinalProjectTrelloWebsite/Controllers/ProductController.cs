@@ -110,6 +110,17 @@ namespace FinalProjectTrelloWebsite.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult OrderNow(int ProductID)
+        {
+            return View();
+        }
+
+        public ActionResult IndexBuy()
+        {
+            ViewBag.listProducts = de.Products.ToList();
+            return View();
+        }
+
 
     }
 
