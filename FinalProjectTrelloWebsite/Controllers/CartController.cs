@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FinalProjectTrelloWebsite.Controllers.Helpers;
 using FinalProjectTrelloWebsite.Models;
-using FinalProjectTrelloWebsite.Controllers;
+
 
 
 
@@ -33,7 +33,7 @@ namespace FinalProjectTrelloWebsite.Controllers
         {
             List<Item> cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
 
-            for (int i = 0; i < cart.Count(); i++)
+            for (int i = 0; i <cart.Count; i++)
             {
                 if (cart[i].Product.ProductID.Equals(id))
                 {
@@ -46,10 +46,13 @@ namespace FinalProjectTrelloWebsite.Controllers
         public IActionResult Buy(int id)
         {
             Product product = new Product();
+
             if(SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart") == null)
             {
                 List<Item> cart = new List<Item>();
+
                 cart.Add(new Item { Product = repo.GetProduct(id), Quantity = 1 });
+
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }
             else
@@ -72,9 +75,13 @@ namespace FinalProjectTrelloWebsite.Controllers
         public IActionResult Remove(int id)
         {
             List<Item> cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+
             int index = isExist(id);
+
             cart.RemoveAt(index);
+
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+
             return RedirectToAction("Index");
         }
     }
