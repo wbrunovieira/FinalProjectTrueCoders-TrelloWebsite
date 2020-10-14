@@ -115,11 +115,7 @@ namespace FinalProjectTrelloWebsite.Controllers
             return View();
         }
 
-        public ActionResult IndexBuy()
-        {
-            ViewBag.listProducts = de.Products.ToList();
-            return View();
-        }
+       
 
 
     }

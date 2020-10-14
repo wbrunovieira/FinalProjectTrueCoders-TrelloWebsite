@@ -38,7 +38,7 @@
     <td>@product.price</td>
     <td><img src="@product.imagePath" width="250" height="150" /></td>
     <td>@product.categoryID</td>
-    <td>Order Now</td>
+    <td align="center"><a asp-controller="cart" asp-action="buy" asp-route-id="@product.ProductID">Buy Now</a></td>
 
 
 </tr>
