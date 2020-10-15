@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FinalProjectTrelloWebsite</title>
+    <title>@ViewData["Title"] - Final Project Trello Website</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" runat="server"/>
     <style>
         body {
             margin: 0;
@@ -53,7 +52,7 @@
             background: #f50a31;
             color: #fff;
         }
-        
+
         .cabecalho {
             display: flex;
             align-items: center;
@@ -72,11 +71,13 @@
                 margin: 0px 10px;
             }
     </style>
+
 </head>
+
 <body>
     <header class="cabecalho">
         <div class="logo">
-            <a href="#inicio">
+            <a>
                 <img src="~/img/trelloLogo.jpg" alt="Trello logo" height="200">
             </a>
         </div>
@@ -84,13 +85,14 @@
             <ul>
                
                 <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="#home" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
                 <li>
-                    <a asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                    <a class="#produto" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
                 </li>
                 <li>
-                    <a href="#contato">Contact</a>
+                    <a class="#contato" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
+                    
                 </li>
             </ul>
         </nav>
@@ -103,41 +105,10 @@
             <a href="#login">Login</a>
             <a href="#registar" class="botao destaque">Registrar</a>
         </aside>
-        <div>
-            
-        </div>
+     
+        
+
     </header>
-
-
-    @*<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-
-
-
-                <img src="~/img/trelloLogo.jpg" alt="Trello logo" height="200">
-
-
-
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>*@
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -145,11 +116,13 @@
         </main>
     </div>
 
-    <footer style="position:absolute;"class="border-top footer text-muted">
+    @*<footer style="position:absolute;"class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - FinalProjectTrelloWebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
+
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
